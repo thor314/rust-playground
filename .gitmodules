@@ -1,3 +1,6 @@
 [submodule "asyncbin"]
 	path = asyncbin
 	url = https://github.com/thor314/asyncbin
+[submodule "test"]
+	path = test
+	url = https://github.com/thor314/test
