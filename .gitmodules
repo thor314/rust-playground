@@ -1,0 +1,3 @@
+[submodule "asyncbin"]
+	path = asyncbin
+	url = https://github.com/thor314/asyncbin
