@@ -1,6 +1,0 @@
-[submodule "libname"]
-	path = libname
-	url = ./libname
-[submodule "this"]
-	path = this
-	url = https://github.com/thor314/this
