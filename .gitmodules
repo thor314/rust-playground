@@ -1,0 +1,3 @@
+[submodule "libname"]
+	path = libname
+	url = ./libname
