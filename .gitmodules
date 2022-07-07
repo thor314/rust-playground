@@ -4,3 +4,6 @@
 [submodule "rhai"]
 	path = rhai
 	url = https://github.com/thor314/rhai
+[submodule "type-level-programming"]
+	path = type-level-programming
+	url = https://github.com/thor314/type-level-programming
