@@ -7,3 +7,6 @@
 [submodule "type-level-programming"]
 	path = type-level-programming
 	url = https://github.com/thor314/type-level-programming
+[submodule "networking-topdown-bk"]
+	path = networking-topdown-bk
+	url = ./networking-topdown-bk

@@ -9,6 +9,7 @@ playtime(){
   cd ~/r/play
   cargo generate --path ~/r/tmpl/cgen --name $1
   cd $1
+  cargo fmt
   git init && git add --all && git commit -m "init"
   hub create 
   git push -u origin $(git symbolic-ref --short HEAD) &
