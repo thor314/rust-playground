@@ -9,4 +9,4 @@
 	url = https://github.com/thor314/type-level-programming
 [submodule "networking-topdown-bk"]
 	path = networking-topdown-bk
-	url = ./networking-topdown-bk
+	url = https://github.com/thor314/networking-topdown-bk
