@@ -10,3 +10,6 @@
 [submodule "networking-topdown-bk"]
 	path = networking-topdown-bk
 	url = https://github.com/thor314/networking-topdown-bk
+[submodule "rocket-examples"]
+	path = rocket-examples
+	url = https://github.com/thor314/rocket-examples
