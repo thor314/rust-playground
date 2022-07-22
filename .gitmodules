@@ -13,6 +13,3 @@
 [submodule "rocket-examples"]
 	path = rocket-examples
 	url = https://github.com/thor314/rocket-examples
-[submodule "testu"]
-	path = testu
-	url = https://github.com/thor314/testu
