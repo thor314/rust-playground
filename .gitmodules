@@ -13,3 +13,6 @@
 [submodule "rocket-examples"]
 	path = rocket-examples
 	url = https://github.com/thor314/rocket-examples
+[submodule "recursive-timed"]
+	path = recursive-timed
+	url = https://github.com/thor314/recursive-timed
