@@ -16,3 +16,6 @@
 [submodule "recursive-timed"]
 	path = recursive-timed
 	url = https://github.com/thor314/recursive-timed
+[submodule "tasky-futures-concurrency"]
+	path = tasky-futures-concurrency
+	url = https://github.com/thor314/tasky-futures-concurrency
