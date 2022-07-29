@@ -19,3 +19,6 @@
 [submodule "tasky-futures-concurrency"]
 	path = tasky-futures-concurrency
 	url = https://github.com/thor314/tasky-futures-concurrency
+[submodule "playground"]
+	path = playground
+	url = https://github.com/thor314/playground
