@@ -1,6 +1,3 @@
-[submodule "asyncbin"]
-	path = asyncbin
-	url = https://github.com/thor314/asyncbin
 [submodule "rhai"]
 	path = rhai
 	url = https://github.com/thor314/rhai
@@ -22,6 +19,6 @@
 [submodule "playground"]
 	path = playground
 	url = https://github.com/thor314/playground
-[submodule "async-playround"]
-	path = async-playround
-	url = https://github.com/thor314/async-playround
+[submodule "async-playground"]
+	path = async-playground
+	url = https://github.com/thor314/async-playground
