@@ -22,3 +22,6 @@
 [submodule "playground"]
 	path = playground
 	url = https://github.com/thor314/playground
+[submodule "async-playround"]
+	path = async-playround
+	url = https://github.com/thor314/async-playround
