@@ -22,3 +22,6 @@
 [submodule "async-playground"]
 	path = async-playground
 	url = https://github.com/thor314/async-playground
+[submodule "surviving-rust-async-interfaces"]
+	path = surviving-rust-async-interfaces
+	url = https://github.com/thor314/surviving-rust-async-interfaces
