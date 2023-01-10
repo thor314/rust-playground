@@ -91,9 +91,12 @@ pub struct ChaCha8Rng {
 }
 
 impl SeedableRng for ChaCha8Rng {
-  type Seed;
+  type Seed = KeyArray;
 
-  fn from_seed(seed: Self::Seed) -> Self { todo!() }
+  fn from_seed(seed: Self::Seed) -> Self {
+    let core = ChaCha8Core::from_seed(seed);
+    Self { rng: BlockRng::new(core) }
+  }
 }
 
 impl RngCore for ChaCha8Rng {
