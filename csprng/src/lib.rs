@@ -11,7 +11,7 @@ use anyhow::Result;
 use rand::{CryptoRng, RngCore, SeedableRng};
 use rand_core::block::{BlockRng, BlockRngCore};
 
-mod error;
+mod array64;
 #[cfg(test)] mod tests;
 mod utils;
 
@@ -28,15 +28,15 @@ mod chacha {
 }
 
 use chacha::ChaCha;
-
 /// ChaCha with 8 rounds
+/// ref: https://github.com/rust-random/rand/blob/master/rand_chacha/src/guts.rs#L28
 #[derive(Clone, PartialEq, Eq)]
 struct ChaCha8Core {
   state: ChaCha,
 }
 
 impl fmt::Debug for ChaCha8Core {
-  fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { todo!() }
+  fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { write!(f, "ChaCha8Core {{}}") }
 }
 
 impl BlockRngCore for ChaCha8Core {
