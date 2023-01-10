@@ -68,6 +68,7 @@ impl fmt::Debug for ChaCha8Core {
   fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { write!(f, "ChaCha8Core {{}}") }
 }
 
+// BlockRngCore implements the core functionality of BlockRng
 impl BlockRngCore for ChaCha8Core {
   /// 2.1: https://cr.yp.to/chacha/chacha-20080128.pdf
   /// Salsa20 invertibly updates 4 32-bit state words
@@ -76,6 +77,8 @@ impl BlockRngCore for ChaCha8Core {
 
   fn generate(&mut self, results: &mut Self::Results) { self.state.refill4(8, &mut results.0); }
 }
+
+// SeedableRng allows us to construct a ChaCha8Core from a seed
 impl SeedableRng for ChaCha8Core {
   /// 256-bit seed
   type Seed = KeyArray;
@@ -83,6 +86,7 @@ impl SeedableRng for ChaCha8Core {
   fn from_seed(seed: Self::Seed) -> Self { ChaCha8Core { state: ChaCha::new(&seed, &[0u8; 8]) } }
 }
 
+// Marker that ChaCha8 is cryptographically secure
 impl CryptoRng for ChaCha8Core {}
 
 #[derive(Clone, Debug)]
@@ -99,14 +103,15 @@ impl SeedableRng for ChaCha8Rng {
   }
 }
 
+// Core RNG functionality, boilerplate mostly
 impl RngCore for ChaCha8Rng {
-  fn next_u32(&mut self) -> u32 { todo!() }
+  fn next_u32(&mut self) -> u32 { self.rng.next_u32() }
 
-  fn next_u64(&mut self) -> u64 { todo!() }
+  fn next_u64(&mut self) -> u64 {self.rng.next_u64()}
 
-  fn fill_bytes(&mut self, dest: &mut [u8]) { todo!() }
+  fn fill_bytes(&mut self, dest: &mut [u8]) {self.rng.fill_bytes(dest)}
 
-  fn try_fill_bytes(&mut self, dest: &mut [u8]) -> Result<(), rand::Error> { todo!() }
+  fn try_fill_bytes(&mut self, dest: &mut [u8]) -> Result<(), rand::Error> {self.rng.try_fill_bytes(dest)}
 }
 impl CryptoRng for ChaCha8Rng {}
 
