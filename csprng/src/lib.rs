@@ -107,17 +107,20 @@ impl SeedableRng for ChaCha8Rng {
 impl RngCore for ChaCha8Rng {
   fn next_u32(&mut self) -> u32 { self.rng.next_u32() }
 
-  fn next_u64(&mut self) -> u64 {self.rng.next_u64()}
+  fn next_u64(&mut self) -> u64 { self.rng.next_u64() }
 
-  fn fill_bytes(&mut self, dest: &mut [u8]) {self.rng.fill_bytes(dest)}
+  fn fill_bytes(&mut self, dest: &mut [u8]) { self.rng.fill_bytes(dest) }
 
-  fn try_fill_bytes(&mut self, dest: &mut [u8]) -> Result<(), rand::Error> {self.rng.try_fill_bytes(dest)}
+  fn try_fill_bytes(&mut self, dest: &mut [u8]) -> Result<(), rand::Error> {
+    self.rng.try_fill_bytes(dest)
+  }
 }
+
 impl CryptoRng for ChaCha8Rng {}
 
 impl From<ChaCha8Core> for ChaCha8Rng {
-  fn from(value: ChaCha8Core) -> Self {
-    todo!();
+  fn from(core: ChaCha8Core) -> Self {
+ChaCha8Rng { rng: BlockRng::new(core) }
   }
 }
 
