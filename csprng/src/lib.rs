@@ -9,11 +9,13 @@
 use std::fmt;
 
 use anyhow::Result;
+use chacha::ChaCha;
 use rand::{CryptoRng, RngCore, SeedableRng};
 use rand_core::block::{BlockRng, BlockRngCore};
 
 mod array64;
 use array64::Array64;
+pub(crate) type KeyArray = [u8; 32];
 
 #[cfg(test)] mod tests;
 mod utils;
@@ -44,6 +46,10 @@ mod chacha {
     pub(crate) d: vec128_storage,
   }
   impl ChaCha {
+    pub fn new(key: &crate::KeyArray, nonce: &[u8]) -> Self {
+      todo!();
+    }
+
     // ref: https://github.com/rust-random/rand/blob/master/rand_chacha/src/guts.rs#L79
     pub fn refill4(&mut self, drounds: u32, out: &mut [u32; BUFSZ]) {
       todo!();
@@ -51,7 +57,6 @@ mod chacha {
   }
 }
 
-use chacha::ChaCha;
 /// ChaCha with 8 rounds
 /// ref: https://github.com/rust-random/rand/blob/master/rand_chacha/src/guts.rs#L28
 #[derive(Clone, PartialEq, Eq)]
@@ -72,9 +77,10 @@ impl BlockRngCore for ChaCha8Core {
   fn generate(&mut self, results: &mut Self::Results) { self.state.refill4(8, &mut results.0); }
 }
 impl SeedableRng for ChaCha8Core {
-  type Seed;
+  /// 256-bit seed
+  type Seed = KeyArray;
 
-  fn from_seed(seed: Self::Seed) -> Self { todo!() }
+  fn from_seed(seed: Self::Seed) -> Self { ChaCha8Core { state: ChaCha::new(&seed, &[0u8; 8]) } }
 }
 
 impl CryptoRng for ChaCha8Core {}
