@@ -9,19 +9,16 @@
 use std::fmt;
 
 use anyhow::Result;
+use array64::Array64;
 use chacha::ChaCha;
 use rand::{CryptoRng, RngCore, SeedableRng};
 use rand_core::block::{BlockRng, BlockRngCore};
 
 mod array64;
-use array64::Array64;
-pub(crate) type KeyArray = [u8; 32];
-
 #[cfg(test)] mod tests;
 mod utils;
 
-mod chacha {
-  use ppv_lite86::vec128_storage;
+pub(crate) mod consts {
 
   // Ref:
   // https://github.com/rust-random/rand/blob/master/rand_chacha/src/guts.rs#L17
@@ -30,11 +27,17 @@ mod chacha {
   pub(crate) const BLOCK: usize = 16;
   pub(crate) const BLOCK64: u64 = BLOCK as u64;
   /// Number of Buffer Blocks
-  const LOG2_BUFBLOCKS: u64 = 2;
-  const BUFBLOCKS: u64 = 1 << LOG2_BUFBLOCKS;
+  pub(crate) const LOG2_BUFBLOCKS: u64 = 2;
+  pub(crate) const BUFBLOCKS: u64 = 1 << LOG2_BUFBLOCKS;
   /// Buffer Size
   pub(crate) const BUFSZ64: u64 = BLOCK64 * BUFBLOCKS;
   pub(crate) const BUFSZ: usize = BUFSZ64 as usize;
+}
+
+pub(crate) type KeyArray = [u8; 32];
+
+mod chacha {
+  use ppv_lite86::vec128_storage;
 
   // Implementation of the crypto-simd API for x86
   // on SIMD instructions: https://cryptologie.net/article/405/simd-instructions-in-crypto/
@@ -51,9 +54,13 @@ mod chacha {
     }
 
     // ref: https://github.com/rust-random/rand/blob/master/rand_chacha/src/guts.rs#L79
-    pub fn refill4(&mut self, drounds: u32, out: &mut [u32; BUFSZ]) {
+    pub fn refill4(&mut self, drounds: u32, out: &mut [u32; crate::consts::BUFSZ]) {
       todo!();
     }
+
+    pub fn get_seed(&self) -> crate::KeyArray { todo!() }
+
+    pub fn get_block_pos(&self) -> u64 { todo!() }
   }
 }
 
@@ -119,14 +126,25 @@ impl RngCore for ChaCha8Rng {
 impl CryptoRng for ChaCha8Rng {}
 
 impl From<ChaCha8Core> for ChaCha8Rng {
-  fn from(core: ChaCha8Core) -> Self {
-ChaCha8Rng { rng: BlockRng::new(core) }
-  }
+  fn from(core: ChaCha8Core) -> Self { ChaCha8Rng { rng: BlockRng::new(core) } }
 }
 
+const BLOCK_WORDS: u64 = 4;
 impl ChaCha8Rng {
+  /// Get the offset from the start of the stream in 32-bit words.
+  ///
+  /// Since the generated blocks are 16 bit words, and the counter is 16 bits, the offset is a 68
+  /// bit number.
   pub fn get_word_pos(&self) -> u128 {
-    todo!();
+    let buf_start_block = {
+      let buf_end_block = self.rng.core.state.get_block_pos();
+      u64::wrapping_sub(buf_end_block, consts::BUFBLOCKS)
+    };
+    let (buf_offset_blocks, block_offset_words) = { 
+      (blocks_part, words_part) };
+    let pos_block = u64::wrapping_add(buf_start_block, buf_offset_blocks);
+    let pos_block_words = u128::from(pos_block) * u128::from(BLOCK_WORDS);
+    pos_block_words + u128::from(block_offset_words)
   }
 
   pub fn set_word_pos(&mut self, word_offset: u128) {
@@ -141,7 +159,5 @@ impl ChaCha8Rng {
     todo!();
   }
 
-  pub fn get_seed(&self) -> [u8; 32] {
-    todo!();
-  }
+  pub fn get_seed(&self) -> [u8; 32] { self.rng.core.state.get_seed() }
 }
