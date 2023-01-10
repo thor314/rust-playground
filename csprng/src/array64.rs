@@ -1,7 +1,7 @@
 use core::fmt;
 
 #[repr(transparent)]
-pub struct Array64<T>([T; 64]);
+pub struct Array64<T>(pub(crate) [T; 64]);
 
 impl<T: Default> Default for Array64<T>
 where T: Default

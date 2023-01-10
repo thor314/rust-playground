@@ -1,5 +1,6 @@
 //! Goal: implement an 8-round ChaCha Rng, using
-//! https://lib.rs/crates/rand_chacha
+//! https://lib.rs/crates/rand_chacha,
+//! https://cr.yp.to/chacha.html
 //! as a reference.
 
 #![allow(unused_imports)]
@@ -12,18 +13,41 @@ use rand::{CryptoRng, RngCore, SeedableRng};
 use rand_core::block::{BlockRng, BlockRngCore};
 
 mod array64;
+use array64::Array64;
+
 #[cfg(test)] mod tests;
 mod utils;
 
 mod chacha {
   use ppv_lite86::vec128_storage;
 
+  // Ref:
+  // https://github.com/rust-random/rand/blob/master/rand_chacha/src/guts.rs#L17
+  // https://cr.yp.to/chacha/chacha-20080128.pdf
+  /// Block Size
+  pub(crate) const BLOCK: usize = 16;
+  pub(crate) const BLOCK64: u64 = BLOCK as u64;
+  /// Number of Buffer Blocks
+  const LOG2_BUFBLOCKS: u64 = 2;
+  const BUFBLOCKS: u64 = 1 << LOG2_BUFBLOCKS;
+  /// Buffer Size
+  pub(crate) const BUFSZ64: u64 = BLOCK64 * BUFBLOCKS;
+  pub(crate) const BUFSZ: usize = BUFSZ64 as usize;
+
   // Implementation of the crypto-simd API for x86
+  // on SIMD instructions: https://cryptologie.net/article/405/simd-instructions-in-crypto/
+  // https://lib.rs/crates/ppv-lite86
   #[derive(Clone, PartialEq, Eq)]
   pub struct ChaCha {
     pub(crate) b: vec128_storage,
     pub(crate) c: vec128_storage,
     pub(crate) d: vec128_storage,
+  }
+  impl ChaCha {
+    // ref: https://github.com/rust-random/rand/blob/master/rand_chacha/src/guts.rs#L79
+    pub fn refill4(&mut self, drounds: u32, out: &mut [u32; BUFSZ]) {
+      todo!();
+    }
   }
 }
 
@@ -40,10 +64,12 @@ impl fmt::Debug for ChaCha8Core {
 }
 
 impl BlockRngCore for ChaCha8Core {
-  type Item;
-  type Results;
+  /// 2.1: https://cr.yp.to/chacha/chacha-20080128.pdf
+  /// Salsa20 invertibly updates 4 32-bit state words
+  type Item = u32;
+  type Results = Array64<u32>;
 
-  fn generate(&mut self, results: &mut Self::Results) { todo!() }
+  fn generate(&mut self, results: &mut Self::Results) { self.state.refill4(8, &mut results.0); }
 }
 impl SeedableRng for ChaCha8Core {
   type Seed;
