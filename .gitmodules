@@ -10,9 +10,6 @@
 [submodule "rocket-examples"]
 	path = rocket-examples
 	url = git@github.com:thor314/rocket-examples.git
-[submodule "recursive-timed"]
-	path = recursive-timed
-	url = git@github.com:thor314/recursive-timed.git
 [submodule "tasky-futures-concurrency"]
 	path = tasky-futures-concurrency
 	url = git@github.com:thor314/tasky-futures-concurrency.git
