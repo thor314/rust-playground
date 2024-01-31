@@ -13,9 +13,6 @@
 [submodule "tasky-futures-concurrency"]
 	path = tasky-futures-concurrency
 	url = git@github.com:thor314/tasky-futures-concurrency.git
-[submodule "playground"]
-	path = playground
-	url = git@github.com:thor314/playground.git
 [submodule "async-playground"]
 	path = async-playground
 	url = git@github.com:thor314/async-playground.git
