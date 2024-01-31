@@ -1,30 +1,30 @@
 [submodule "rhai"]
 	path = rhai
-	url = https://github.com/thor314/rhai
+	url = git@github.com:thor314/rhai.git
 [submodule "type-level-programming"]
 	path = type-level-programming
-	url = https://github.com/thor314/type-level-programming
+	url = git@github.com:thor314/type-level-programming.git
 [submodule "networking-topdown-bk"]
 	path = networking-topdown-bk
-	url = https://github.com/thor314/networking-topdown-bk
+	url = git@github.com:thor314/networking-topdown-bk.git
 [submodule "rocket-examples"]
 	path = rocket-examples
-	url = https://github.com/thor314/rocket-examples
+	url = git@github.com:thor314/rocket-examples.git
 [submodule "recursive-timed"]
 	path = recursive-timed
-	url = https://github.com/thor314/recursive-timed
+	url = git@github.com:thor314/recursive-timed.git
 [submodule "tasky-futures-concurrency"]
 	path = tasky-futures-concurrency
-	url = https://github.com/thor314/tasky-futures-concurrency
+	url = git@github.com:thor314/tasky-futures-concurrency.git
 [submodule "playground"]
 	path = playground
-	url = https://github.com/thor314/playground
+	url = git@github.com:thor314/playground.git
 [submodule "async-playground"]
 	path = async-playground
-	url = https://github.com/thor314/async-playground
+	url = git@github.com:thor314/async-playground.git
 [submodule "fasterthanlime-surviving-rust-async-interfaces"]
 	path = fasterthanlime-surviving-rust-async-interfaces
-	url = https://github.com/thor314/fasterthanlime-surviving-rust-async-interfaces
+	url = git@github.com:thor314/fasterthanlime-surviving-rust-async-interfaces.git
 [submodule "parser_play"]
 	path = parser_play
 	url = git@github.com:thor314/parser_play.git
