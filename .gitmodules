@@ -61,3 +61,6 @@
 [submodule "halo/halo-2-example"]
 	path = halo/halo-2-example
 	url = git@github.com:thor314/halo-2-example.git
+[submodule "halo/halo-2-benches"]
+	path = halo/halo-2-benches
+	url = git@github.com:thor314/halo-2-benches.git
