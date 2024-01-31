@@ -49,3 +49,6 @@
 [submodule "update-dates"]
 	path = update-dates
 	url = git@github.com:thor314/update-dates.git
+[submodule "git-controlled-project-root"]
+	path = git-controlled-project-root
+	url = git@github.com:thor314/git-controlled-project-root.git
