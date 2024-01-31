@@ -61,3 +61,6 @@
 [submodule "async_http_server_example"]
 	path = async_http_server_example
 	url = git@github.com:thor314/async_http_server_example.git
+[submodule "rocket_pastebin_example"]
+	path = rocket_pastebin_example
+	url = git@github.com:thor314/rocket_pastebin_example.git
