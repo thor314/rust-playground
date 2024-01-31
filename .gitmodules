@@ -55,3 +55,6 @@
 [submodule "halo/halostar"]
 	path = halo/halostar
 	url = git@github.com:thor314/halostar.git
+[submodule "halo-2-example"]
+	path = halo-2-example
+	url = git@github.com:thor314/halo-2-example.git
