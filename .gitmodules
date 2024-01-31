@@ -43,3 +43,6 @@
 [submodule "grpc-client-server"]
 	path = grpc-client-server
 	url = git@github.com:thor314/grpc-client-server.git
+[submodule "tap_validator"]
+	path = tap_validator
+	url = git@github.com:thor314/tap_validator.git
