@@ -40,3 +40,6 @@
 [submodule "async_programming_book"]
 	path = async_programming_book
 	url = git@github.com:thor314/async_programming_book.git
+[submodule "grpc-client-server"]
+	path = grpc-client-server
+	url = git@github.com:thor314/grpc-client-server.git
