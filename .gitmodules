@@ -25,3 +25,6 @@
 [submodule "fasterthanlime-surviving-rust-async-interfaces"]
 	path = fasterthanlime-surviving-rust-async-interfaces
 	url = https://github.com/thor314/fasterthanlime-surviving-rust-async-interfaces
+[submodule "parser_play"]
+	path = parser_play
+	url = git@github.com:thor314/parser_play.git
