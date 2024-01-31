@@ -58,3 +58,6 @@
 [submodule "halo/halo-2-benches"]
 	path = halo/halo-2-benches
 	url = git@github.com:thor314/halo-2-benches.git
+[submodule "async_http_server_example"]
+	path = async_http_server_example
+	url = git@github.com:thor314/async_http_server_example.git
