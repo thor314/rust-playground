@@ -52,3 +52,6 @@
 [submodule "git-controlled-project-root"]
 	path = git-controlled-project-root
 	url = git@github.com:thor314/git-controlled-project-root.git
+[submodule "halo/halostar"]
+	path = halo/halostar
+	url = git@github.com:thor314/halostar.git
