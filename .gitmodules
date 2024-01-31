@@ -37,3 +37,6 @@
 [submodule "function-factory"]
 	path = function-factory
 	url = git@github.com:thor314/function-factory.git
+[submodule "async_programming_book"]
+	path = async_programming_book
+	url = git@github.com:thor314/async_programming_book.git
