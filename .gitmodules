@@ -58,3 +58,6 @@
 [submodule "rocket_pastebin_example"]
 	path = rocket_pastebin_example
 	url = git@github.com:thor314/rocket_pastebin_example.git
+[submodule "ollama"]
+	path = ollama
+	url = git@github.com:thor314/ollama.git
