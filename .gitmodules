@@ -61,3 +61,6 @@
 [submodule "ollama"]
 	path = ollama
 	url = git@github.com:thor314/ollama.git
+[submodule "cli-play"]
+	path = cli-play
+	url = git@github.com:thor314/cli-play.git
