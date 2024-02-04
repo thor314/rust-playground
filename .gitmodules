@@ -22,9 +22,6 @@
 [submodule "tokio"]
 	path = tokio
 	url = git@github.com:thor314/tokio.git
-[submodule "tracing"]
-	path = tracing
-	url = git@github.com:thor314/tracing.git
 [submodule "function-factory"]
 	path = function-factory
 	url = git@github.com:thor314/function-factory.git
