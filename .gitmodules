@@ -19,9 +19,6 @@
 [submodule "parser_play"]
 	path = parser_play
 	url = git@github.com:thor314/parser_play.git
-[submodule "tokio"]
-	path = tokio
-	url = git@github.com:thor314/tokio.git
 [submodule "function-factory"]
 	path = function-factory
 	url = git@github.com:thor314/function-factory.git
