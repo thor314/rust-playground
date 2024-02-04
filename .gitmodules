@@ -10,9 +10,6 @@
 [submodule "async-playground"]
 	path = async-playground
 	url = git@github.com:thor314/async-playground.git
-[submodule "fasterthanlime-surviving-rust-async-interfaces"]
-	path = fasterthanlime-surviving-rust-async-interfaces
-	url = git@github.com:thor314/fasterthanlime-surviving-rust-async-interfaces.git
 [submodule "parser_play"]
 	path = parser_play
 	url = git@github.com:thor314/parser_play.git
