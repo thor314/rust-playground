@@ -4,9 +4,6 @@
 [submodule "type-level-programming"]
 	path = type-level-programming
 	url = git@github.com:thor314/type-level-programming.git
-[submodule "rocket-examples"]
-	path = rocket-examples
-	url = git@github.com:thor314/rocket-examples.git
 [submodule "async-playground"]
 	path = async-playground
 	url = git@github.com:thor314/async-playground.git
@@ -16,9 +13,6 @@
 [submodule "function-factory"]
 	path = function-factory
 	url = git@github.com:thor314/function-factory.git
-[submodule "grpc-client-server"]
-	path = grpc-client-server
-	url = git@github.com:thor314/grpc-client-server.git
 [submodule "tap_validator"]
 	path = tap_validator
 	url = git@github.com:thor314/tap_validator.git
@@ -31,12 +25,6 @@
 [submodule "halo/halo-2-benches"]
 	path = halo/halo-2-benches
 	url = git@github.com:thor314/halo-2-benches.git
-[submodule "async_http_server_example"]
-	path = async_http_server_example
-	url = git@github.com:thor314/async_http_server_example.git
-[submodule "rocket_pastebin_example"]
-	path = rocket_pastebin_example
-	url = git@github.com:thor314/rocket_pastebin_example.git
 [submodule "ollama"]
 	path = ollama
 	url = git@github.com:thor314/ollama.git
