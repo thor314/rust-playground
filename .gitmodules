@@ -34,9 +34,6 @@
 [submodule "tap_validator"]
 	path = tap_validator
 	url = git@github.com:thor314/tap_validator.git
-[submodule "binaries/update-dates"]
-	path = binaries/update-dates
-	url = git@github.com:thor314/update-dates.git
 [submodule "git-controlled-project-root"]
 	path = git-controlled-project-root
 	url = git@github.com:thor314/git-controlled-project-root.git
@@ -61,3 +58,6 @@
 [submodule "cli-play"]
 	path = cli-play
 	url = git@github.com:thor314/cli-play.git
+[submodule "binaries/update-dates"]
+	path = binaries/update-dates
+	url = git@github.com:thor314/update-dates.git
