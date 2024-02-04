@@ -7,9 +7,6 @@
 [submodule "rocket-examples"]
 	path = rocket-examples
 	url = git@github.com:thor314/rocket-examples.git
-[submodule "tasky-futures-concurrency"]
-	path = tasky-futures-concurrency
-	url = git@github.com:thor314/tasky-futures-concurrency.git
 [submodule "async-playground"]
 	path = async-playground
 	url = git@github.com:thor314/async-playground.git
