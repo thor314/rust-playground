@@ -58,3 +58,6 @@
 [submodule "binaries/update-dates"]
 	path = binaries/update-dates
 	url = git@github.com:thor314/update-dates.git
+[submodule "binaries/git-controlled-project-root"]
+	path = binaries/git-controlled-project-root
+	url = git@github.com:thor314/git-controlled-project-root.git
