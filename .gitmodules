@@ -37,3 +37,6 @@
 [submodule "binaries/git-controlled-project-root"]
 	path = binaries/git-controlled-project-root
 	url = git@github.com:thor314/git-controlled-project-root.git
+[submodule "server"]
+	path = server
+	url = git@github.com:thor314/server.git
