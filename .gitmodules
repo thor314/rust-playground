@@ -19,3 +19,6 @@
 [submodule "server"]
 	path = server
 	url = git@github.com:thor314/server.git
+[submodule "halo"]
+	path = halo
+	url = git@github.com:thor314/halo.git
