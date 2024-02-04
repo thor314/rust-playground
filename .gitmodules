@@ -1,33 +1,12 @@
-[submodule "rhai"]
-	path = rhai
-	url = git@github.com:thor314/rhai.git
 [submodule "type-level-programming"]
 	path = type-level-programming
 	url = git@github.com:thor314/type-level-programming.git
 [submodule "async-playground"]
 	path = async-playground
 	url = git@github.com:thor314/async-playground.git
-[submodule "parser_play"]
-	path = parser_play
-	url = git@github.com:thor314/parser_play.git
 [submodule "function-factory"]
 	path = function-factory
 	url = git@github.com:thor314/function-factory.git
-[submodule "tap_validator"]
-	path = tap_validator
-	url = git@github.com:thor314/tap_validator.git
-[submodule "halo/halostar"]
-	path = halo/halostar
-	url = git@github.com:thor314/halostar.git
-[submodule "halo/halo-2-example"]
-	path = halo/halo-2-example
-	url = git@github.com:thor314/halo-2-example.git
-[submodule "halo/halo-2-benches"]
-	path = halo/halo-2-benches
-	url = git@github.com:thor314/halo-2-benches.git
-[submodule "ollama"]
-	path = ollama
-	url = git@github.com:thor314/ollama.git
 [submodule "cli-play"]
 	path = cli-play
 	url = git@github.com:thor314/cli-play.git
